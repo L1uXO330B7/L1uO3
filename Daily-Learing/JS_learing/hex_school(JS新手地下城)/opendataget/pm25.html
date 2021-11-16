@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/jquery/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <select id="citys" onchange="selectCounty()">
+  <option value="全台">全台</option>
+  <option value="高雄市">高雄市</option>
+</select>
+    <ul id="southside"></ul>
+    <script>
+        let pmData;
+        let County;
+        // 宣告全域變數
+        $.ajax({
+            // 在這先取資料，方便之後重複使用,ps: 除非需要即時資料，才要每次取
+            url: 'https://opendata.epa.gov.tw/api/v1/AQI?%24skip=0&%24top=1000&%24format=json',
+            method: "get",
+            dataType: "json",
+            data: "",
+            success: function(res) {
+                // 成功取到資料
+                pmData = res;
+                // 資料放進變數
+                select();
+                render();
+            },
+            // ajax 成功之後才繼續做後面的事情，
+            error: function(err) {
+                console.log("error", err)
+            },
+        });
+
+        function selectCounty() {
+            // 取資料中的取縣市值，重新渲染結果
+            County = $("#citys").val();
+            console.log(County);
+            render();
+        }
+
+        function select() {
+            // 這是拿資料最後要渲染的結果
+            let selectOptions = "";
+            // 縣市選擇渲染
+            let fliterOptions = [];
+            // 要過濾重複取道的縣市
+            pmData.forEach(x => {
+                fliterOptions.push(x.County);
+            });
+            // 放進全部縣市value
+            var result = fliterOptions.filter(function(element, index, arr) {
+                return arr.indexOf(element) === index;
+                // filter函數過濾重複的縣市
+            });
+            selectOptions = `<option value="全台">全台</option>`
+                // 先加進全台選項
+            result.forEach(a => {
+                selectOptions += `<option value="${a}">${a}</option>`;
+                // 整理已過濾的縣市選擇
+            });
+            $("#citys").html(selectOptions);
+        }
+
+        function render() {
+            // 渲染整理好的縣市選擇
+            let text = "";
+            // 先宣告變數來裝最終結果讓每筆資料不讓foreach刷新
+            // console.log("pmData", pmData);
+            pmData.forEach(element => {
+                // 逐筆資料尋訪
+                // console.log(element);
+                // console.log(County);
+                // (element.County == County)
+                let checkcounty = true;
+                // 選擇縣市篩選要選取渲染的資料
+                // console.log("County", County);
+                if (County != "全台" && County != undefined) {
+                    // 不是全台和undefined的型別再來比對這筆資料縣市是不是所選擇的，ps. County 原本沒有宣告型別
+                    checkcounty = (element.County == County);
+                    // console.log(element.County == County)
+                }
+                if (checkcounty) {
+                    // 當尋訪到County等於所選的縣市，執行以下渲染
+                    let num = parseInt(element.AQI, 10);
+                    let bgcolor = "";
+                    if (num <= 50) {
+                        bgcolor = `green`;
+                    } else if (num > 50 && num <= 99) {
+                        bgcolor = `yellow`;
+                    } else if (num > 99 && num <= 200) {
+                        bgcolor = `orange`;
+                    } else if (num > 200 && num <= 300) {
+                        bgcolor = `red`;
+                    } else if (num > 300 && num <= 400) {
+                        bgcolor = `purple`;
+                    }
+                    text += `<li style="background-color:${bgcolor};margin: 5%;">${element.SiteName}<br>AQI:${element.AQI}</li>`;
+                }
+            })
+            $("#southside").html(text);
+        }
+    </script>
+</body>
+
+</html>

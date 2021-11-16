@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HappyBirthdatToAmy</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/css/bootstrap.min.css'
+        integrity='sha512-6KY5s6UI5J7SVYuZB4S/CZMyPylqyyNZco376NM2Z8Sb8OxEdp02e1jkKk/wZxIEmjQ6DRCEBhni+gpr9c4tvA=='
+        crossorigin='anonymous' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css'
+        integrity='sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=='
+        crossorigin='anonymous' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allison&display=swap" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<style>
+    body {
+        background-color: rgb(221, 92, 67);
+    }
+
+    h1 {
+        font-family: 'Allison', cursive;
+        font-size: 64px;
+        color: white;
+    }
+
+    .snoopy1 {
+        width: 80%;
+    }
+    .amy1{
+        width: 50%;
+        border-radius: 50% 50%;
+    }
+    h4{
+        font-weight: bolder ;
+    }
+    #age18{
+        font-size: 25px;
+    }
+</style>
+
+<body>
+    <div class="container-fluid d-flex align-items-center py-3 flex-column main" data-aos="flip-left"
+        data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+        <img src="./happy-birthday-happy-birthday-to-you.gif" class="img-fluid snoopy1">
+        <h1 class="text-center">Nice to See You <br>Amy</h1>
+        <img src="./pin.jpg" class="img-fluid amy1"> 
+    </div>
+    <div data-aos="fade-up"
+    data-aos-duration="3000" class="px-3 container-fluid d-flex align-items-center py-3 flex-column main" style="background-color: wheat;">
+        <p class="text-center" style="font-size:30px; color: white;">歡迎來到品萱生日闖關</p>
+        <p class="text-center" style="font-size:24px; color: white;">準備好要開始認識品萱了嗎?</p>
+        <h4 class="mt-5">第一關 : 今年是品萱的幾歲生日?</h4>
+        <form class="text-center">
+            <input type="radio" id="age18" value="18" name="age" onclick="ageChange()">
+            <label for="age18" style="font-size: 25px;">18</label><br>
+            <input type="radio" id="age20"  value="20" name="age" onclick="ageChange()">
+            <label for="age20" style="font-size: 25px;">20</label><br>
+            <input type="radio" id="age23"  value="23" name="age" onclick="ageChange()">
+            <label for="age23" style="font-size: 25px;">23</label>
+          </form>
+          <button type="button" style="margin:5px auto;" onclick="checkAge();">送出答案</button>
+          <div id="ageTrue" style="transition: all 1s;"></div>
+          <h5 style="padding: 50px 0;">________</h5>
+          <div class="px-3 container-fluid align-items-center py-3 flex-column main d-none" id="foodGame">
+            <h4 class="mt-5">第二關 : 品萱最喜歡的食物 ?</h4>
+            <form class="text-center">
+                <input type="radio" id="taro" value="taro" name="food" onclick="foodChange()">
+                <label for="taro" style="font-size: 25px;">芋頭</label><br>
+                <input type="radio" id="soup"  value="soup" name="food" onclick="foodChange()">
+                <label for="soup" style="font-size: 25px;">火鍋、湯</label><br>
+                <input type="radio" id="pumpkin"  value="pumpkin" name="food" onclick="foodChange()">
+                <label for="pumpkin" style="font-size: 25px;">南瓜</label>
+              </form>
+              <button type="button" style="margin:5px auto;" onclick="checkFood()">送出答案</button>
+              <div id="foodTrue" style="transition: all 1s;"></div>
+              <h5 style="padding: 50px 0;">_______</h5>
+              <div class="px-3 container-fluid align-items-center py-3 flex-column main d-none" id="success">
+                <img src="./woodStock.png" style="width: 30%;"><h3 class="text-center mt-3">哪泥!!<br>竟然兩題都答對了<br>恭喜你可以獲得獎品<br>可依截圖於<a href="https://www.youtube.com/watch?v=CpsZwB63zmA&ab_channel=%E6%84%9B%E8%B2%9D%E5%85%8B%E6%80%9Davextaiwan"> 9/20 </a>領獎<br>感謝您的參與!!</h3>
+            </div>
+          </div>
+    </div>
+</body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js' integrity='sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==' crossorigin='anonymous'></script>
+<script>
+    let age;
+    let food;
+    AOS.init();
+    function ageChange(){
+        age = document.querySelector('[name=age]:checked');
+        console.log(age.value);
+    }
+    function foodChange(){
+        food = document.querySelector('[name=food]:checked');
+        console.log(food.value);
+    }
+    function checkAge(){
+        if (age.value==23){
+            console.log('true');
+            let ageTrue = `<div style="display:flex;align-items:center;justify-content:space-around;" class="animate__animated animate__fadeInLeft"><img src="./true.png" style="width:30%"><h3>: 你對品萱有了解唷~</h3></div>`
+            $('#ageTrue').html(ageTrue);
+            $('#foodGame').removeClass("d-none").addClass("d-flex");
+        }
+        else{
+            let ageFalse=`<div style="display:flex;align-items:center;justify-content:space-around;" class="animate__animated animate__fadeInLeft"><img src="./false.png" style="width:30%"><h3>: 你不了解品萱!</h3></div>`
+            $('#ageTrue').html(ageFalse);
+        }
+        $("html, body").animate({ scrollTop: $(document).height()-$(window).height() },0);
+    }
+    function checkFood(){
+        if (food.value=="soup"){
+            console.log('true');
+            let ageTrue = `<div style="display:flex;align-items:center;justify-content:space-around;" class="animate__animated animate__fadeInLeft"><img src="./snoopyHappy.png" style="width:40%;"><h3>: 真蚌真蚌 ~</h3></div>`
+            $('#foodTrue').html(ageTrue);
+            $('#success').removeClass("d-none").addClass("d-flex");
+        }
+        else{
+            let ageFalse=`<div style="display:flex;align-items:center;justify-content:space-around;" class="animate__animated animate__fadeInLeft"><img src="./snoopyMad.png" style="width:40%"><h3>: 你真的好樣的! </h3></div>`
+            $('#foodTrue').html(ageFalse);
+        }
+        $("html, body").animate({ scrollTop: $(document).height()-$(window).height() },2000);
+    }
+</script>
+
+</html>

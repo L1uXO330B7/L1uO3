@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./all.css">
+</head>
+
+<body>
+    <header>
+        <h1>
+            高雄旅遊資訊網
+        </h1>
+        <select class="location" onchange="optionChange()">
+  <option value="全台">全台</option>
+  <option value="高雄市">高雄市</option>
+  </select>
+    </header>
+
+    </div>
+    <div class="content">
+        <div class="hotspot">
+            <h3>熱門行政區</h3>
+            <ul class="hotspot-list">
+                <!-- 綁定區域跟option -->
+                <li><input value="苓雅區" type="button" class="purple"></li>
+                <li><input value="三民區" type="button" class="orange"></li>
+                <li><input value="左營區" type="button" class="yellow"></li>
+                <li><input value="小港區" type="button" class="blue"></li>
+            </ul>
+        </div>
+        <div class="hr"><i class="fas fa-chevron-circle-down"></i></div>
+        <div class="currentLocation">
+            <h2>全部行政區</h2>
+        </div>
+        <ul class="card-list">
+
+        </ul>
+        <ul class="page-list"></ul>
+    </div>
+    <footer>
+        <h5>高雄旅遊網</h5>
+        <p>資料來源 : <a href="https://www.kcg.gov.tw/Default.aspx">高雄市政府</a></p>
+    </footer>
+    <a href="#" class="scrollToTopBTN"><img src="./img/btn_goTop.png"></a>
+</body>
+<script src="./all.js">
+</script>
+
+</html>

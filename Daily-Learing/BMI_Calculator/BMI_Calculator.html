@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="./all.css">
+</head>
+
+<body>
+    <header>
+        <div class="ItemBMI">
+            <img src='./IMG/BMICLogo.png'>
+            <form class="FormBMI">
+                <div class="InputBox"><label for="userH">身高 cm</label>
+                    <input type="number" placeholder="請輸入身高" id="userH" min="11" max="250"></div>
+                <div class="InputBox"><label for="userW">體重 kg</label>
+                    <input type="number" placeholder="請輸入體重" id="userW" min="3" max="250"></div>
+
+            </form>
+            <div class="ButtonBox"><button onclick="ResultBTN(event)" class="ResultBTN">看結果<span><img src="./IMG/icons_loop.png"></button></span>
+                <h4 class="BMItext"></h4>
+            </div>
+        </div>
+    </header>
+    <section class="wrap">
+        <h4>BMI 紀錄</h4>
+        <ul class="DataList"></ul>
+    </section>
+    <footer>
+        <img src="./IMG/BMICLogo1.png">
+    </footer>
+</body>
+<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+<script src="./all.js">
+</script>
+
+</html>

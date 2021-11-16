@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    var hamburgerPrice = 50;
+    var friesPrice = 40;
+    var totalPrice = 0;
+    var markHamburgerNum = 2;
+    var markfriesNum = 4;
+    var markIsVIP;
+    // 如上面新增的變數，馬克買了 2 個漢堡，與 4 個薯條
+    // 請同時運用比較運算子與邏輯運算子，將比較結果寫在 markIsVIP 上
+    // markIsVIP 的型別必須為布林值 (true or false)
+    totalPrice = (hamburgerPrice * markHamburgerNum + friesPrice * markfriesNum);
+    console.log(totalPrice);
+    marklsVIP = totalPrice >= 200;
+    console.log("mark 的 VIP 條件為" + marklsVIP);
+
+    var VIPTotal = 200;
+    var memberPrice = 350;
+    if (VIPTotal <= memberPrice) {
+        console.log("您好，您有達到 VIP 門檻。這裡給您 VIP 會員卡(遞上");
+    }
+    // 請透過 if 來設計回覆，如果對方滿足門檻
+    // 就回覆 console.log("您好，您有達到 VIP 門檻。這裡給您 VIP 會員卡(遞上")
+
+    var totalPrice = 50;
+    var lack = 0;
+    lack = VIPTotal - totalPrice;
+    console.log(VIPTotal - totalPrice);
+    if (VIPTotal <= totalPrice) {
+        console.log(("尊敬的客戶您好，您有達到 VIP 條件"));
+    } else {
+        console.log(("尊敬的客戶您好，您還差" + lack + "元，才有符合 VIP 條件哦~"));
+    }
+    // 請透過 if else 來去設計對方是否有達到條件，有或沒有都需要回覆對方
+    // 如果有，請顯示 console.log("尊敬的客戶您好，您有達到 VIP 條件")
+    // 如果沒有達到條件，便用 else 顯示 console.log("尊敬的客戶您好，您還差 xx 元，才有符合 VIP 條件哦~")
+</script>

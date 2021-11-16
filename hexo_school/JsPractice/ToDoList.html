@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.css'
+        integrity='sha512-H+HWO9L7oLHex/9VCN9kyGaYp96jiJUwadh87k24XzAe+7eLmCdsdaEOfeZTaFmdZ0y4SDdq0eLh8+1OMJQ50g=='
+        crossorigin='anonymous'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css'
+        integrity='sha512-vZWT27aGmde93huNyIV/K7YsydxaafHLynlJa/4aPy28/R1a/IxewUH4MWo7As5I33hpQ7JS24kwqy/ciIFgvg=='
+        crossorigin='anonymous' />
+</head>
+
+<body>
+    <div class="container my-4">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="What are you going to do ?" id="todo">
+            <button class="btn btn-secondary" type="button" id="add">送出</button>
+        </div>
+        <h3>Todo List</h3>
+        <div class="my-3 filterType">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input radio" type="radio" name="type" id="type_all" value="all" checked onchange="methods.showAll()">
+                <label class="form-check-label" for="type_all">全部</label>
+            </div>
+            <div class="form-check form-check-inline radio">
+                <input class="form-check-input" type="radio" name="type" id="type_incomplete" value="incomplete" onchange="methods.InCompeleted()">
+                <label class="form-check-label" for="type_incomplete">未完成</label>
+            </div>
+        </div>
+        <ul class="list-group todoContent" id="ListRender">
+            <li class="list-group-item d-flex align-items-center">
+                <input class="form-check-input me-1" type="checkbox" value="" id="ex1">
+                <label for="ex1">First checkbox</label>
+                <button class="btn btn-sm btn-danger ms-auto">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    const StorageArray = JSON.parse(localStorage.getItem('MyToDoList')) || [];
+    const methods = {
+        getData: () => {
+            let category = document.querySelector('#type_all').checked;
+            let ToDoList = {
+                ThingToDo: '',
+                Completed: false,
+            }
+            ToDoList.ThingToDo = document.querySelector('#todo').value;
+            if(ToDoList.ThingToDo==''){
+                document.querySelector('#todo').placeholder = '請記得輸入事項';
+                return
+            }
+            StorageArray.push(ToDoList);
+            localStorage.setItem('MyToDoList', JSON.stringify(StorageArray));
+            if (category){
+                methods.showAll();
+            }else{
+                methods.InCompeleted();
+            }
+            document.querySelector('#todo').value = '';
+        },
+        changeCheck: (event,num) => {
+            if(event.target.checked){
+                StorageArray[num].Completed = true;
+            }else {
+                StorageArray[num].Completed = false;
+            }
+            localStorage.setItem('MyToDoList', JSON.stringify(StorageArray));
+        },
+        showAll: () => {
+            let str = ``;
+            StorageArray.forEach((element, index) => {
+                let isChecked = '';
+                if(element.Completed){
+                    isChecked = 'checked';
+                }
+                str += `<li class="list-group-item d-flex align-items-center">
+                <input class="form-check-input me-1 check" type="checkbox" value="" id="ex1" ${isChecked} onchange="methods.changeCheck(event,${index})">
+                <label for="ex1">${element.ThingToDo}</label>
+                <button class="btn btn-sm btn-danger ms-auto delete" type="button" onclick="methods.deleteToDo(${index})">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+                </li>`
+            });
+            methods.render(str);
+        },
+        InCompeleted:()=>{
+            let str = ``;
+            StorageArray.forEach((element, index) => {
+                if (element.Completed){
+                    return
+                }else {
+                    str += `<li class="list-group-item d-flex align-items-center">
+                <input class="form-check-input me-1 check" type="checkbox" value="" id="ex1" onchange="methods.changeCheck(event,${index});methods.InCompeleted()">
+                <label for="ex1">${element.ThingToDo}</label>
+                <button class="btn btn-sm btn-danger ms-auto delete" type="button" onclick="methods.deleteToDo(${index})">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+                </li>`;
+                }
+            })
+            methods.render(str);
+        },
+        deleteToDo: (index) => {
+            let category = document.querySelector('#type_all').checked;
+            StorageArray.splice(index,1);
+            localStorage.setItem('MyToDoList', JSON.stringify(StorageArray));
+            if (category){
+                methods.showAll();
+            }else{
+                methods.InCompeleted();
+            }
+        },
+        render: (str) => {
+            document.querySelector('#ListRender').innerHTML = str;
+        }
+    };
+    function created() {
+        methods.showAll();
+        document.getElementById('add').addEventListener('click', methods.getData);
+    }
+    created();
+</script>
+
+</html>

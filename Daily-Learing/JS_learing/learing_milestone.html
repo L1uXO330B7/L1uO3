@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/js/jquery/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/locale/zh-tw.js"></script>
+    <!-- 載入繁中資料 -->
+    <style>
+        #nowTime {
+            font-size: 24px;
+        }
+        
+        #rat_game {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .rat {
+            background-image: url(https://static-cdn.jtvnw.net/jtv_user_pictures/asiagodtonegg3be0-profile_image-081feb3428b1a1c6-300x300.jpeg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nowTime"></div>
+    <div id="greet">
+    </div>
+    <div id="demo"></div>
+    <div id="rat_game">
+    </div>
+</body>
+
+</html>
+<script>
+    dayjs.locale('zh-tw')
+        // 切成繁中
+    var Mytime = window.setInterval(function() {
+        clock()
+    }, 1000);
+
+    function clock() {
+        var time = dayjs().format('dddd, MMMM D, YYYY h:mm A')
+        document.getElementById("nowTime").innerHTML = "現在時間:" + time;
+    }
+    // day.js -------------------------------------------------------------------------取代monment.js
+    var d = new Date();
+    var hours = d.getHours();
+    console.log(hours);
+    if (hours < 11) {
+        document.getElementById("greet").innerHTML = "<h2>早安!祝你有美好的一天!</h2>"
+    } else if (hours >= 11 && hours < 18) {
+        document.getElementById("greet").innerHTML = "<h2>Hello!今天過得還好嗎?</h2>"
+    } else {
+        document.getElementById("greet").innerHTML = "<h2>晚安!祝你有美好的一晚</h2>"
+    }
+    // 測試if  else if 功能
+    $(
+        // https://ithelp.ithome.com.tw/articles/10193313
+        // 立即函示與 ready 差別
+        // 其作用和 $(document).ready()一樣 ，用意在DOM載入後執行ready()方法。
+        function() {
+            console.log(1);
+            // 抓 id = demo 的 Tag 放進變數 myElement
+            var myElement = $("#demo");
+            // 將此物件內渲染一個按鈕，此按鈕 click 事件時觸發 gamestart function
+            myElement.html(`<button onclick="gamestart()">統神:打我啊!</button>`);
+
+
+        });
+
+    // http://www.j4.com.tw/web-design/%E5%B8%B8%E8%A6%8Bjquery%E7%9A%84%E4%B8%89%E7%A8%AE%E4%B8%8D%E5%90%8C%E6%9E%B6%E6%A7%8B-function-function-fn-myfunctionname/
+
+    // 測試JQ
+    function gamestart() {
+        console.log(3);
+        var i;
+        var text = ""
+        $("#demo").click(function() {
+            for (i = 0; i < 3; i++) {
+                //
+                text += `<ul>
+                    <li id="asd_${i}" class="rat" onclick="casasd(this)"></li>
+                    <li id="asd_${i+80}" class="rat" onclick="casasd(this)"></li>
+                    <li id="asd_${i+90}" class="rat" onclick="casasd(this)"></li>
+                    </ul>`
+            }
+            $("#rat_game").html(text);
+            $("#demo").hide();
+        })
+    }
+
+    function casasd(pasasd) {
+        console.log(pasasd.id);
+        $("#" + pasasd.id).css("background-image", "url('https://i.imgur.com/rWzzCpv.png')")
+    }
+</script>

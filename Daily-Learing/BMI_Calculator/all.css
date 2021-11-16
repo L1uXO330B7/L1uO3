@@ -1,0 +1,181 @@
+ html,
+ body {
+     height: 100%;
+ }
+ 
+ body {
+     display: flex;
+     flex-direction: column;
+     background-color: rgba(255, 255, 20, 0.30);
+ }
+ 
+ header {
+     background: #424242;
+ }
+ 
+ .ItemBMI {
+     padding: 50px 0;
+     margin: 0 auto;
+     display: flex;
+     width: 100%;
+     max-width: 1024px;
+     justify-content: space-around;
+     align-items: center;
+ }
+ 
+ .FormBMI {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+ 
+ .FormBMI label {
+     font-size: 18px;
+     line-height: 21px;
+     color: #FFD366;
+ }
+ 
+ .FormBMI input {
+     font-size: 24px;
+     color: rgba(255, 255, 255, 0.80);
+     overflow: hidden;
+     width: 250px;
+     background: rgba(255, 255, 255, 0.18);
+     border: 2px solid #FFD366;
+     border-radius: 10px;
+     margin-top: 5px;
+     padding: 5px;
+     transition: all 1s;
+ }
+ 
+ .FormBMI input::placeholder {
+     color: white;
+ }
+ 
+ .FormBMI input:focus {
+     outline: none;
+     box-shadow: 0px 0px 5px 5px #FFD366;
+     transition: all 1s;
+ }
+ 
+ .InputBox {
+     margin: 10px 0px;
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ .ResultBTN {
+     border: 6px solid #FFD366;
+     text-align: center;
+     font-size: 24px;
+     position: relative;
+     cursor: pointer;
+     color: #424242;
+     width: 120px;
+     height: 120px;
+     background: #FFD366;
+     border-radius: 50% 50%;
+     outline: none;
+     transition: all 1s;
+     margin-right: 15px;
+ }
+ 
+ .ResultBTN:hover {
+     transition: all 1s;
+     box-shadow: 0px 0px 5px 5px #FFD366;
+ }
+ 
+ .ResultBTN span {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 30px;
+     height: 30px;
+     border-radius: 50% 50%;
+     position: absolute;
+     top: 75px;
+     right: -10px;
+     background-color: #FFD366;
+     border: 3px solid #424242;
+ }
+ 
+ .DataList li {
+     transition: all 1s;
+     background-color: white;
+     width: 600px;
+     padding: 0px 10px;
+     margin: 15px 0;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     border-left: 5px;
+     border-style: solid;
+ }
+ 
+ .DataList p {
+     font-weight: bold;
+     font-size: 20px;
+ }
+ 
+ .DataList span {
+     margin-right: 5px;
+     font-size: 14px;
+ }
+ 
+ .DataList button {
+     transition: all 1s;
+     background-color: red;
+     border-radius: 15px 15px;
+     cursor: pointer;
+     color: white;
+ }
+ 
+ .DataList button:hover {
+     font-size: 20px;
+     transition: all 1s;
+     transform: scale(1.2);
+ }
+ 
+ .ButtonBox {
+     display: flex;
+     align-items: center;
+ }
+ 
+ .BMItext {
+     font-size: 32px;
+ }
+ 
+ .ResultBTN p {
+     font-size: 14px;
+ }
+ 
+ .ResultBTN h4 {
+     font-size: 32px;
+ }
+ 
+ .wrap {
+     flex-grow: 1;
+     flex-direction: column;
+     margin: 30px auto;
+     max-width: 1024px;
+     display: flex;
+     align-items: center;
+ }
+ 
+ .wrap h4 {
+     font-size: 24px;
+     font-weight: bold;
+     margin: 20px 0;
+ }
+ 
+ footer {
+     margin-top: -100px;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     padding: 30px 0px;
+     text-align: center;
+     margin: 0 auto;
+     width: 100%;
+     background-color: #FFD366;
+ }

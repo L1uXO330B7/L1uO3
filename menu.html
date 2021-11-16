@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>育愷小天地</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <script src="/js/jquery/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/locale/zh-tw.js"></script>
+</head>
+<style>
+    @font-face {
+        font-family: oxxo;
+        src: url(./Font/wt009.ttf);
+        /* 沒有指定萬國碼區間，預設涵蓋所有的範圍 */
+    }
+
+    body {
+        font-family: oxxo;
+    }
+
+    .projectboard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project_icon {
+        width: 5%;
+        height: 5%;
+    }
+</style>
+
+<body>
+    <nav class="sticky-top">
+        <ul class="nav justify-content-center bg-light py-3">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Readme</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#functionList">小功能說明與紀錄</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#projectsList">專案列表</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">My Resume</a>
+            </li>
+        </ul>
+    </nav>
+    <header class="container text-center">
+        <h1 class="bg-primary py-1 text-white" id="greet">Hello World!</h1>
+        <h3>我是育愷</h3>
+        <h2 class="text-primary">滴水穿石，積沙成塔</h2>
+    </header>
+    <section class="container mt-5 d-flex projectboard">
+        <h3 id="projectsList">專案列表 :</h3>
+        <ul class="list-unstyled mt-3 border border-primary bg-light">
+            <li class="media p-4">
+                <img src="png/projecticon.png" class="mr-3 img-fluid project_icon" alt="專案說明">
+                <div class="media-body">
+                    <h4><a href="">美國文學報告</a></h4>
+                    <p class="text-justify">
+                        因應用外語系大三下的美國文學課中的期末報告要求，須發揮創意，並展現所學，所以我做了一頁網頁來將我學到東西呈現在上面。這是我的第一個製作的網頁，在 HTML 與 CSS 運用上都顯得很生疏。
+                    </p>
+                </div>
+            </li>
+            <li class="media p-4">
+                <img src="png/projecticon.png" class="mr-3 img-fluid project_icon" alt="專案說明">
+                <div class="media-body">
+                    <h4><a
+                            href="https://big-code-milk.github.io/Carl/Summer-vaction-notes/hexoschool_hw/week1/%E5%80%8B%E4%BA%BA%E5%B1%A5%E6%AD%B7%E7%89%88%E5%9E%8B.html">六角學院前端體驗營
+                            (履歷版型)</a></h4>
+                    <p class="text-justify">
+                        因緣際會報名了這個免費的大學生體驗營，開始對網頁切版有基礎的認識，這是此營隊的第一項主要作業，使用六角學院給的 Adobe XD 版型，來進行切版。第一次了解到 CSS Reset
+                        的使用方法。
+                    </p>
+                </div>
+            </li>
+            <li class="media p-4">
+                <img src="png/projecticon.png" class="mr-3 img-fluid project_icon" alt="專案說明">
+                <div class="media-body">
+                    <h4><a href="https://big-code-milk.github.io/Carl/Summer-vaction-notes/hexoschool_hw/week5/01.html">六角學院前端體驗營
+                            (甜點電商版型)</a></h4>
+                    <p class="text-justify">
+                        這是此營隊的第二項主要作業，使用六角學院給的Adobe XD版型，來進行切版。這次則是認識到 Flex, hover, 一些 HTML5 與 CSS3 的基本使用以及如何實現 RWD
+                        (響應式網頁設計)。
+                    </p>
+                </div>
+            </li>
+            <li class="media p-4">
+                <img src="png/projecticon.png" class="mr-3 img-fluid project_icon" alt="專案說明">
+                <div class="media-body">
+                    <h4><a
+                            href="https://big-code-milk.github.io/Carl/Summer-vaction-notes/hexoschool_hw/week7/page/01.html">六角學院前端體驗營
+                            (香水電商版型)</a></h4>
+                    <p class="text-justify">
+                        這是此營隊的第三項主要作業，使用六角學院給的Adobe XD版型，來進行切版。這次主要運用到了 BS4來進行排版以及一些 JQuery 和使用 SCSS 來修改幾項 BS4 預設值 。
+                    </p>
+                </div>
+        </ul>
+        <section class="container mt-5 d-flex projectboard">
+            <h3 id="functionList">小功能說明與範例 :</h3>
+            <ul class="list-unstyled mt-3 border border-primary bg-light">
+                <li class="media p-4">
+                    <img src="png/projecticon.png" class="mr-3 img-fluid project_icon" alt="專案說明">
+                    <div class="media-body">
+                        <h4><a href="/Daily-Learing/JS_learing/hex_school(JS新手地下城)/9X9乘法表/99.html">九九乘法表</a></h4>
+                        <p class="text-justify">
+                            先用變數做出9次迴圈，做出1到9，然後在這些迴圈中再做一次變數1到9的迴圈，讓兩個變數在第二個迴圈中互乘，再用 JS 拼湊出 HTML 渲染到網頁中。
+                        </p>
+                    </div>
+                </li>
+                <li class="media p-4">
+                    <img src="png/projecticon.png" class="mr-3 img-fluid project_icon" alt="專案說明">
+                    <div class="media-body">
+                        <h4><a href="Daily-Learing/JS_learing/hex_school(JS新手地下城)/時鐘/clock.html">時鐘</a></h4>
+                        <p class="text-justify">
+                            利用new Date()這個時間物件，抓當下時間(小時，分鐘，秒)，+上算角度，例如每過60秒，秒針動了60次，分針才動1格，時針可能動0.1格，
+                            再利用document物件內的方getElementByID or
+                            querySelector來用ID抓element，再.style取得style然後改變其中的transfrom參數，再用
+                            windows這個物間中的setInterval()這個函式來讓上述結果每1秒刷新一次
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+</body>
+<script>
+    dayjs.locale('zh-tw')
+    // 切成繁中
+    var Mytime = window.setInterval(function () {
+        clock()
+    }, 1000);
+
+    function clock() {
+        var time = dayjs().format('dddd, MMMM D, YYYY h:mm A')
+        document.getElementById("nowTime").innerHTML = "現在時間:" + time;
+    }
+    // day.js -------------------------------------------------------------------------取代monment.js
+    var d = new Date();
+    var hours = d.getHours();
+    console.log(hours);
+    if (hours < 11) {
+        document.getElementById("greet").innerHTML = "<h2>Good Morning , World !</h2>"
+    } else if (hours >= 11 && hours < 18) {
+        document.getElementById("greet").innerHTML = "<h2>Hello World?</h2>"
+    } else {
+        document.getElementById("greet").innerHTML = "<h2>Good Evening , World !</h2>"
+    }
+    // 測試if  else if 功能
+    $(
+        // https://ithelp.ithome.com.tw/articles/10193313
+        // 立即函示與 ready 差別
+        // 其作用和 $(document).ready()一樣 ，用意在DOM載入後執行ready()方法。
+        function () {
+            console.log(1);
+            // 抓 id = demo 的 Tag 放進變數 myElement
+            var myElement = $("#demo");
+            // 將此物件內渲染一個按鈕，此按鈕 click 事件時觸發 gamestart function
+            myElement.html(`<button onclick="gamestart()">統神:打我啊!</button>`);
+
+
+        });
+</script>
+
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技職轉換公益平台</title>
+    <link rel="icon" href="../image/MainPage/10.png" type="image/x-icon">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.css'
+        integrity='sha512-9LMt8yHSTC2NNj7wxs1u0wfc8JsHPz2IO3hPj5ZOVhM60uMHDhWxEzO+Yz9wBCJRoMa4UHItzgdwW4ZxVG2O4g=='
+        crossorigin='anonymous' />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css'
+        integrity='sha512-vZWT27aGmde93huNyIV/K7YsydxaafHLynlJa/4aPy28/R1a/IxewUH4MWo7As5I33hpQ7JS24kwqy/ciIFgvg=='
+        crossorigin='anonymous' />
+    <link rel="stylesheet" href="../CSS/all.css">
+
+</head>
+
+<body class="container-fluid p-0">
+    <div class="swiper-container mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide bg-main">
+                <header class="NavBarOne Main">
+                    <a href='#'><img src="../image/icon/3.png" class="img-fluid">
+                    </a>
+                </header>
+                <div class="content-main">
+                    <ul class="menu p-0">
+                        <li onclick="BackToMain(event,1)"><a href="#" class="MenuHover"><img
+                                    src="../image/icon/15.png"></a></li>
+                        <li onclick="BackToMain(event,3)"><a href="#" class="MenuHover"><img
+                                    src="../image/icon/16.png"></a></li>
+                        <li onclick="BackToMain(event,5)"><a href="#" class="MenuHover"><img
+                                    src="../image/icon/17.png"></a></li>
+                        <li onclick="BackToMain(event,6)"><a href="#" class="MenuHover d-lg-none"><img
+                                    src="../image/icon/18.png"></a>
+                        </li>
+                    </ul>
+                    <img src="../Gif/Gif4.gif" class="MainGif">
+                    <div class="TextMain d-none968">
+                        <img src="../image/TEXT/1.png">
+                        <a href="#" class="MenuHover"><img src="../image/icon/18.png" onclick="BackToMain(event,6)"></a>
+                    </div>
+                    <img src="../image/icon/20.png" class="TextSecond">
+                </div>
+                <footer class=" FooterOne"></footer>
+            </div>
+            <div class="swiper-slide bg-two">
+                <header class="NavBartwo">
+                    <ul class="menu-secondary">
+                        <li>
+                            <div class="NavBTN">
+                                <p class="m-0">關於拾穗</p>
+                                <img src="../image/TopButton.png" class="bgBTN active">
+                            </div>
+                        </li>
+                        <li class="d-xl-block d-none" onclick="BackToMain(event,3)"><a href="#" class="secondaryNav">
+                                <div class="NavBTN ">
+                                    <p class="m-0 text-dark">受眾</p>
+                                    <img src="../image/TopButton.png" class="bgBTN">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="d-xl-block d-none" onclick="BackToMain(event,5)"><a href="#" class="secondaryNav">
+                                <div class="NavBTN">
+                                    <p class="m-0 text-dark">小測驗</p>
+                                    <img src="../image/TopButton.png" class="bgBTN">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="d-xl-block d-none" onclick="BackToMain(event,6)"><a href="#" class="secondaryNav">
+                                <div class="NavBTN">
+                                    <p class="m-0 text-dark">開始使用</p>
+                                    <img src="../image/TopButton.png" class="bgBTN">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div><a href="#" onclick="BackToMain(event,0)"><img src="../image/icon/4.png" class="BackMain"></a>
+                    </div>
+                </header>
+                <div class="content-main-second">
+                    <div class="main-first"><img src="../image/icon/5.png" class="imgSecond"></div>
+                    <div class="main-second">
+                        <img src="../image/TEXT/2.png" class="imgSecond">
+                        <!-- Button trigger modal -->
+                        <button type="button"
+                            onclick="javascript:location.href='https://www.seinsights.asia/article/3291/3280/5565'">了解更多</button>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide bg-three">
+                <header class="NavBartwo">
+                    <ul class="menu-secondary">
+                        <li>
+                            <div class="NavBTN">
+                                <p class="m-0">關於拾穗</p>
+                                <img src="../image/TopButton.png" class="bgBTN active">
+                            </div>
+                        </li>
+                        <li class="d-xl-block d-none" onclick="BackToMain(event,3)"><a href="#" class="secondaryNav">
+                                <div class="NavBTN">
+                                    <p class="m-0 text-dark">受眾</p>
+                                    <img src="../image/TopButton.png" class="bgBTN">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="d-xl-block d-none" onclick="BackToMain(event,5)"><a href="#" class="secondaryNav">
+                                <div class="NavBTN">
+                                    <p class="m-0 text-dark">小測驗</p>
+                                    <img src="../image/TopButton.png" class="bgBTN">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="d-xl-block d-none" onclick="BackToMain(event,6)"><a href="#" class="secondaryNav">
+                                <div class="NavBTN">
+                                    <p class="m-0 text-dark">開始使用</p>
+                                    <img src="../image/TopButton.png" class="bgBTN">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div><a href="#" onclick="BackToMain(event,0)"><img src="../image/icon/4.png" class="BackMain"></a>
+                    </div>
+                </header>
+                <div class="content-main-third">
+                    <div class="imgBox">
+                        <img src="../image/TEXT/3.png">
+                    </div>
+                    <div class="btnBox">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">平台宗旨</button>
+                    </div>
+                    <img src="../image/icon/32.png" class="ideaImg">
+                </div>
+            </div>
+            <div class="swiper-slide bg-four">
+                <header class="NavBartwo blueBar">
+                    <ul class="menu-secondary">
+                        <li class="d-xl-block d-none" onclick="BackToMain(event,1)">
+                            <div class="NavBTN">
+                                <a href="#" class="secondaryNav">
+                                    <p class="m-0 text-f8f7ee">關於拾穗</p>
+                                    <img src="../image/TopButton.png" class="bgBTN">
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="NavBTN">
+                                <p class="m-0">受眾</p>
+                                <img src="../image/TopButton.png" class="bgBTN active">
+                            </div>
+                        </li>
+                        <li class="d-xl-block d-none" onclick="BackToMain(event,5)"><a href="#" class="secondaryNav">
+                                <div class="NavBTN">
+                                    <p class="m-0 text-f8f7ee">小測驗</p>
+                                    <img src="../image/TopButton.png" class="bgBTN">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="d-xl-block d-none" onclick="BackToMain(event,6)"><a href="#" class="secondaryNav">
+                                <div class="NavBTN">
+                                    <p class="m-0 text-f8f7ee">開始使用</p>
+                                    <img src="../image/TopButton.png" class="bgBTN">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div><a href="#" onclick="BackToMain(event,0)"><img src="../image/icon/58.png" class="BackMain"></a>
+                    </div>
+                </header>
+                <div class="content-main-four">
+                    <ul class="imgBox-four">
+                        <li><img src="../image/icon/8.png">
+                        </li>
+                        <li class="width-120"><img src="../image/icon/9.png">
+                        </li>
+                        <li><img src="../image/icon/10.png">
+                        </li>
+                        <li class="width-120"><img src="../image/icon/11.png">
+                        </li>
+                    </ul>
+                    <div class="text-box-four">
+                        <p class="four-text">無論你是
+                            <span class="important-text"> 身心障礙</span>、<span class="important-text">弱勢族群</span>
+                        </p>
+                        <p class="four-text-second">
+                            <span class="important-text">住在偏遠地區</span> 抑或是 <span class="important-text"> 單親家庭</span>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="swiper-slide bg-five">
+                <header class="NavBartwo blueBar">
+                    <ul class="menu-secondary">
+                        <li class="d-xl-block d-none" onclick="BackToMain(event,1)">
+                            <div class="NavBTN">
+                                <a href="#" class="secondaryNav">
+                                    <p class="m-0 text-f8f7ee">關於拾穗</p>
+                                    <img src="../image/TopButton.png" class="bgBTN">
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="NavBTN">
+                                <p class="m-0">受眾</p>
+                                <img src="../image/TopButton.png" class="bgBTN active">
+                            </div>
+                        </li>
+                        <li class="d-xl-block d-none" onclick="BackToMain(event,5)"><a href="#" class="secondaryNav">
+                                <div class="NavBTN">
+                                    <p class="m-0 text-f8f7ee">小測驗</p>
+                                    <img src="../image/TopButton.png" class="bgBTN">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="d-xl-block d-none" onclick="BackToMain(event,6)"><a href="#" class="secondaryNav">
+                                <div class="NavBTN">
+                                    <p class="m-0 text-f8f7ee">開始使用</p>
+                                    <img src="../image/TopButton.png" class="bgBTN">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div><a href="#" onclick="BackToMain(event,0)"><img src="../image/icon/58.png" class="BackMain"></a>
+                    </div>
+                </header>
+                <div class="content-main-five">
+                    <p class="four-text px-4 text-width">
+                        <span class="important-text">無法透過正常管道學習一技之長</span> 的族群也能有機會學習:
+                    </p>
+                    <div class="imgBox-five">
+                        <img src="../image/icon/38.png">
+                        <img src="../image/icon/39.png">
+                        <img src="../image/icon/40.png" class="width-60">
+                        <img src="../image/icon/41.png">
+                    </div>
+                    <div class="imgBox-five five-second">
+                        <img src="../image/icon/42.png">
+                        <img src="../image/icon/43.png">
+                        <img src="../image/icon/44.png">
+                        <img src="../image/icon/45.png">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide bg-six">
+                <header class="NavBartwo blueBar">
+                    <ul class="menu-secondary">
+                        <li class="d-xl-block d-none" onclick="BackToMain(event,1)">
+                            <div class="NavBTN">
+                                <a href="#" class="secondaryNav">
+                                    <p class="m-0 text-f8f7ee">關於拾穗</p>
+                                    <img src="../image/TopButton.png" class="bgBTN">
+                                </a>
+                            </div>
+                        </li>
+                        <li class="d-xl-block d-none" onclick="BackToMain(event,3)">
+                            <a href="#" class="secondaryNav">
+                                <div class="NavBTN">
+                                    <p class="m-0 text-f8f7ee">受眾</p>
+                                    <img src="../image/TopButton.png" class="bgBTN">
+                                </div>
+                            </a>
+
+                        </li>
+                        <li>
+                            <div class="NavBTN">
+                                <p class="m-0">小測驗</p>
+                                <img src="../image/TopButton.png" class="bgBTN active">
+                            </div>
+                        </li>
+                        <li class="d-xl-block d-none" onclick="BackToMain(event,6)"><a href="#" class="secondaryNav">
+                                <div class="NavBTN">
+                                    <p class="m-0 text-f8f7ee">開始使用</p>
+                                    <img src="../image/TopButton.png" class="bgBTN">
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div><a href="#" onclick="BackToMain(event,0)"><img src="../image/icon/58.png" class="BackMain"></a>
+                    </div>
+                </header>
+                <div class="content-main-six">
+                    <div class="imgBox-six">
+                        <img src="../Gif/Gif2.gif">
+                    </div>
+                    <div class="text-box-six">
+                        <img src="../image/TEXT/6.png" class="text-six">
+                        <a href="https://www.arealme.com/career/zh/" target="_blank"><img
+                                src="../image/icon/51.png"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide bg-seven">
+                <header class="NavBartwo blueBar">
+                    <ul class="menu-secondary">
+                        <li class="d-xl-block d-none" onclick="BackToMain(event,1)">
+                            <div class="NavBTN">
+                                <a href="#" class="secondaryNav">
+                                    <p class="m-0 text-f8f7ee">關於拾穗</p>
+                                    <img src="../image/TopButton.png" class="bgBTN">
+                                </a>
+                            </div>
+                        </li>
+                        <li class="d-xl-block d-none" onclick="BackToMain(event,3)">
+                            <a href="#" class="secondaryNav">
+                                <div class="NavBTN">
+                                    <p class="m-0 text-f8f7ee">受眾</p>
+                                    <img src="../image/TopButton.png" class="bgBTN">
+                                </div>
+                            </a>
+
+                        </li>
+                        <li class="d-xl-block d-none" onclick="BackToMain(event,5)">
+                            <a href="#" class="secondaryNav">
+                                <div class="NavBTN">
+                                    <p class="m-0 text-f8f7ee">小測驗</p>
+                                    <img src="../image/TopButton.png" class="bgBTN">
+                                </div>
+                            </a>
+
+                        </li>
+                        <li>
+                            <div class="NavBTN">
+                                <p class="m-0">開始使用</p>
+                                <img src="../image/TopButton.png" class="bgBTN active">
+                            </div>
+                        </li>
+                    </ul>
+                    <div><a href="#" onclick="BackToMain(event,0)"><img src="../image/icon/58.png" class="BackMain"></a>
+                    </div>
+                </header>
+                <div class="content-main-seven">
+                    <img src="../Gif/Gif1.gif" class="imgBox-seven">
+                    <div class="text-box-seven">
+                        <p>
+                            「拾穗」做為一個輔助的墊腳石，讓人們能夠利用其閒暇時間，遠眺社會中真正需要被幫助的人、事、物，能夠藉由現今網路施展抱負，不管是影片互動，或是相約，傳授其自身所學等等，來影響更多的人，溫暖現今冷漠的社會！
+                        </p>
+                        <button href="#" class="MenuHover border-none" type="button" class="btn btn-primary"
+                            data-bs-toggle="modal" data-bs-target="#EndModal"><img src="../image/icon/18.png"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center" style="background-color: #f3c58e;">
+                    <h5 class="modal-title" id="exampleModalLabel" style="color:#2e5077 ;">平台宗旨</h5>
+                    <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    我們希望搭建一個平台，我們做一個輔助的墊腳石，讓真正社會中需要被幫助的人、事、物，能夠藉由現今網路被幫助！讓無法通過職訓局受訓門檻或缺少一技之長的偏遠鄉(社)區之弱勢民眾或無法天天通勤上課的身障族群，也能有獲得技能的權利，協助發展專屬於他們的自立系統。盼其將初步技能學成後，能夠繼續向上，能將所學再藉由此平台傳遞給同族群、同地區有需求之民眾。而我們的任務就是繼續傳遞，影響更多的人，溫暖現今冷漠的社會。
+                    <div style="text-align: center;"><img src="../image/icon/3.png" style="width: 300px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="EndModal" tabindex="-1" aria-labelledby="EndModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content width-700">
+                <div class="modal-header justify-content-center" style="background-color: #f8f7ee;">
+                    <h5 class="modal-title" id="exampleModalLabel" style="color:#2e5077 ;">使用說明</h5>
+                    <button type="button" class="btn-close m-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;"><img src="../image/icon/3.png" style="width: 300px;"></div>
+                    <div class="modal-footer justify-content-center mt-3">
+                        <button type="button" class="btn-hover"
+                            style="background-color: #f8f7ee;border: none;color: #000;padding: 15px 60px;font-size: 40px;border-radius: 50px 50px;"
+                            onclick="javascript:location.href='https://l1uxo330b7.github.io/Carl/hack_demo/page/DataTable.html'">立即使用</button>
+                    </div>
+                    <h5 class="text-justify">
+                        在使用平台前可以先致電身心障礙庇護工場詢問所需技能，如無此技能時，便可在平台發問尋找幫助，三人行必有我師焉，當有人願意伸出援手時，也可以向平台申請所需的服務時數。
+                    </h5>
+                    <p class="text-center">以下資料為身心障礙庇護工場資訊:<br><a href="https://data.kcg.gov.tw/" class="text-warning">(
+                            資料來源自高雄市政府資料開放平台 )</a>
+                    </p>
+                    <div id="dataDiv"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js'
+    integrity='sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=='
+    crossorigin='anonymous'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.js'
+    integrity='sha512-8LIFSzvvyanCM8TSA5f9S++dBWOljWRxuqWA8EKXWlcj0N8yBTXVIJROTJrb6FCVMTR2PtfLh6GexmIz5CgSqA=='
+    crossorigin='anonymous'></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script>
+    alert("建議使用IE 8.0以上之版本，配合1920×1080解析度可得最佳瀏覽畫面")
+    function isMobile() {
+        try {
+            document.createEvent("TouchEvent");
+            return true;
+        } catch (e) {
+            return false;
+        }
+    }
+    let isTouchMode = 0;
+    if (isMobile()) {
+        isTouchMode = 0.5;
+    }
+    let swiper = new Swiper(".mySwiper", {
+        direction: "vertical",
+        touchRatio: isTouchMode,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        mousewheel: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+    $('.secondaryNav').mouseover(function(event){
+        event.preventDefault();
+        $(this).find('img').addClass('active');
+    });
+    $('.secondaryNav').mouseout(function(event){
+        event.preventDefault();
+        $(this).find('img').removeClass('active');
+    });
+    $('')
+    function BackToMain(event, num) {
+        event.preventDefault();
+        console.log('click');
+        console.log(swiper);
+        swiper.slideTo(num, 2000, false);
+        //切换到第一个slide，速度为1秒
+    }
+    let FactoryObj = [];
+    const ApiURL = "https://data.kcg.gov.tw/dataset/5e9423e4-d325-416b-9a99-d39c7db4f890/resource/aef8eedd-6dd1-4afd-9cba-8d3226ce0ab5/download/-.json";
+    $.ajax({
+        type: "GET",
+        url: ApiURL,
+        dataType: "json",
+        success: function (response) {
+            console.log(response.orgs.frg.org);
+            FactoryObj = response.orgs.frg.org;
+            TreatData(FactoryObj);
+        },
+        error: function (thrownError) {
+            console.log(thrownError);
+        }
+    })
+    function TreatData(FactoryObj) {
+        let str = "";
+        FactoryObj.forEach((element, inedx) => {
+            console.log(element.lat, element.lng);
+            str += `<div class="dataIn">
+                <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=${element.lat},${element.lng}(${element.text})&z=16&output=embed"></iframe>
+                <h3><i class="fas fa-school" style="margin-right:5px;"></i>單位: ${element.text}</h3><h3><i class="fas fa-hammer" style="margin-right:5px;></i>技能產出: ${element.servItem}</h3><h3><i class="fas fa-map-marker-alt" style="margin-right:5px;"></i>地址: ${element.informaddress}</h3><h3><i class="fas fa-phone-alt" style="margin-right:5px;"></i>聯絡電話: ${element.informtel}</h3></div>`
+        });
+        $('#dataDiv').html(str);
+    }
+    console.log("FactoryObj", FactoryObj);
+</script>
+<script src="../JS/all.js"></script>
+
+</html>

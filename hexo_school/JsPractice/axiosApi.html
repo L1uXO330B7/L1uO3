@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .d-flex-column{
+        display: flex;
+        flex-direction: column;
+    }
+    .align-items-center{
+        align-items: center;
+    }
+    .justify-contents-center{
+        justify-content: center;
+    }
+    .mt-5 {
+        margin-top: 50px;
+    }
+    .UserImg{
+        border-radius: 50%;
+    }
+</style>
+<body>
+    <div class="d-flex-column align-items-center justify-contents-center mt-5">
+        <img class="UserImg" src="">
+        <h1 class="UserName"></h1>
+        <h3 class="UserMail"></p>
+    </div>
+</body>
+</html>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.9.1/axios.js'
+    integrity='sha512-Kg0CewqPNO/ziOJuCq5eyl3P/V6OLz/Lb1I2m+yKS3lHZcGVFN/KOew18rWP+kTsL7haYdaqGjwHQCZrN0heLQ=='
+    crossorigin='anonymous'></script>
+<script>
+getData()
+function getData(){
+    axios({
+        method: 'get',
+        url: 'https://randomuser.me/api/'
+    })
+        .then((response) => {
+            console.log(response.data.results[0]);
+            render(response.data.results[0]);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+}
+function render(data){
+    let Img = document.querySelector('.UserImg');
+    Img.setAttribute('src',data.picture.large);
+    let Name = document.querySelector('.UserName');
+    Name.textContent = data.name.first +' '+ data.name.last;
+    let Mail = document.querySelector('.UserMail');
+    Mail.textContent = data.email
+}
+</script>

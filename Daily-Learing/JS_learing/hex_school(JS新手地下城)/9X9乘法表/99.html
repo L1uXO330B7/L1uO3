@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<style>
+    .box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 50px;
+    }
+    
+    .box2 h2 {
+        font-size: 40px;
+    }
+    
+    .box ul {
+        font-size: 25px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .box2 {
+        border: 1px solid black;
+        width: 30%;
+        margin: 10px;
+    }
+</style>
+
+<body>
+    <nav class="sticky-top">
+        <ul class="nav justify-content-center bg-light py-3">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Readme</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/menu.html#functionList">小功能說明與紀錄</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/menu.html#projectsList">專案列表</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">My Resume</a>
+            </li>
+        </ul>
+    </nav>
+    <header class="container text-primary text-center pt-5">
+        <h1 class="border border-primary py-3">九九乘法表</h1>
+    </header>
+    <div class="container box" id="here">
+
+    </div>
+</body>
+
+</html>
+<script>
+    var i;
+    // i變數要利用迴圈從2到6
+    var j;
+    var r;
+    var t = "";
+    var d = "";
+    // 宣告變數為數字時，不
+    // j變數要利用迴圈從1到9
+    for (i = 1; i < 10; i++) {
+        t = "";
+        // 變數t在每次執行時都要歸零，避免疊加上次執行完的內容
+        for (j = 1; j < 10; j++) {
+            r = i * j;
+            t += `<li>${i}  × ${j} = ${i*j}</li>`
+                // console.log(t);
+                // if (j == 3) {
+                //     t += "<br>";
+                // }
+        }
+        d += `<div class="box2"><h2 class="text-center bg-primary text-white">${i}</h2><ul class="text-justify list-unstyled d-flex bg-light">${t} </ul></div>`;
+    }
+    document.getElementById("here").innerHTML = d;
+    // 6*<ul>8*8<li> = 64</ul>    <il>9*9 = 81</ul>
+</script>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Response Web Design Demo</title>
+    <link rel="stylesheet" href="css/default.css">
+    <style>
+        /* CSS Reset */
+        
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+        
+        html {
+            line-height: 1;
+        }
+        
+        ol,
+        ul {
+            list-style: none;
+        }
+        
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        
+        caption,
+        th,
+        td {
+            text-align: left;
+            font-weight: normal;
+            vertical-align: middle;
+        }
+        
+        q,
+        blockquote {
+            quotes: none;
+        }
+        
+        q:before,
+        q:after,
+        blockquote:before,
+        blockquote:after {
+            content: "";
+            content: none;
+        }
+        
+        a img {
+            border: none;
+        }
+        
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section,
+        summary {
+            display: block;
+        }
+        
+        html {}
+        
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+        /* CSS Reset end */
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        html,
+        body {
+            background: #000;
+        }
+        
+        .wrap {
+            background: white;
+            width: 950px;
+            margin: 0 auto;
+            display: flex;
+        }
+        
+        .nav {
+            width: 30%;
+            padding: 10px;
+        }
+        
+        .nav h1 {
+            border: 1px solid #e7eeea;
+            text-align: center;
+            padding: 20px;
+            font-size: 24px;
+            color: white;
+            background-color: #37523d;
+            font-weight: bold;
+        }
+        
+        .nav ul li {
+            cursor: pointer;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            color: #37523d;
+            font-weight: bold;
+            border: 1px solid #e7eeea;
+            border-top: none;
+        }
+        
+        .nav ul li:hover {
+            background-color: #e7eeea;
+        }
+        /* 主要區域 */
+        
+        .main {
+            width: 70%;
+            display: flex;
+            flex-wrap: wrap;
+            color: #37523d;
+            padding: 10px;
+        }
+        
+        .sweet-item {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .sweet-item img {
+            width: 300px;
+            height: 315px;
+        }
+        
+        .categories-price {
+            display: flex;
+            font-size: 20px;
+        }
+        
+        .item-name {
+            width: 60%;
+            text-align: center;
+            vertical-align: center;
+            padding: 15px;
+            border: 1px solid #e7eeea;
+            border-top: none;
+        }
+        
+        .price {
+            width: 40%;
+            padding: 15px;
+            font-weight: bold;
+            text-align: center;
+            border-right: 1px solid #e7eeea;
+        }
+        
+        .order-car p {
+            width: 100%;
+            border-top: none;
+            text-align: center;
+            padding: 20px 20px;
+            font-size: 20px;
+            color: #37523d;
+            font-weight: bold;
+            background-color: #e7eeea;
+            border: 1px solid #e7eeea;
+        }
+        
+        .order-car p:hover {
+            cursor: pointer;
+            background-color: #37523d;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="nav">
+            <h1>甜點類別</h1>
+            <ul>
+                <li>所有甜點(45)</li>
+                <li>本日精選(10)</li>
+                <li>人氣精選(26)</li>
+                <li>所有甜點(12)</li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="sweet-item">
+                <img src="https://hexschool.github.io/flexImgUrl/10/pic1.png
+" alt="donuts">
+                <div class="categories-price">
+                    <p class="item-name">焦糖甜甜圈</p>
+                    <p class="price">NT$ 450</p>
+                </div>
+                <div class="order-car">
+                    <p>加入購物車</p>
+                </div>
+            </div>
+            <div class="sweet-item">
+                <img src="https://hexschool.github.io/flexImgUrl/10/pic2.png" alt="berry cake">
+                <div class="categories-price">
+                    <p class="item-name">焦糖甜甜圈</p>
+                    <p class="price">NT$ 450</p>
+                </div>
+                <div class="order-car">
+                    <p>加入購物車</p>
+                </div>
+            </div>
+            <div class="sweet-item">
+                <img src="https://hexschool.github.io/flexImgUrl/10/pic3.png" alt="blue-berry cake">
+                <div class="categories-price">
+                    <p class="item-name">焦糖甜甜圈</p>
+                    <p class="price">NT$ 450</p>
+                </div>
+                <div class="order-car">
+                    <p>加入購物車</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

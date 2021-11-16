@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <style>
+        .clock_box {
+            margin: 100px;
+            width: 10px;
+            height: 100px;
+            background-color: black;
+            position: absolute;
+            transform-origin: top left;
+        }
+        
+        @keyframes example {
+            0% {
+                background-color: red;
+            }
+            25% {
+                background-color: yellow;
+            }
+            50% {
+                background-color: blue;
+            }
+            75% {
+                background-color: green;
+            }
+            100% {
+                background-color: red;
+            }
+        }
+        
+        .dot {
+            height: 50px;
+            width: 50px;
+            border: 2px solid black;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            background-color: black;
+        }
+        
+        #minutes-pointer {
+            margin: 100px;
+            width: 10px;
+            height: 95px;
+            background-color: black;
+            transform-origin: top left;
+            border-radius: 15% 0% 70% 50%;
+            position: absolute;
+        }
+        
+        .main-clock {
+            width: 500px;
+            height: 500px;
+            background-image: url(/png/clock.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            border-radius: 50%;
+        }
+        
+        #minutesPointer {
+            margin: 100px;
+            width: 13px;
+            height: 150px;
+            background-color: black;
+            transform-origin: 10px 5px;
+            border-radius: 15% 0% 70% 50%;
+            position: absolute;
+            top: 140px;
+        }
+        
+        #secondsPointer {
+            margin: 100px;
+            width: 10px;
+            height: 190px;
+            background-color: black;
+            transform-origin: 5px 5px;
+            border-radius: 15% 0% 70% 50%;
+            position: absolute;
+            top: 145px;
+        }
+        
+        #hoursPointer {
+            margin: 100px;
+            width: 15px;
+            height: 100px;
+            background-color: black;
+            transform-origin: 5px 5px;
+            border-radius: 15% 0% 70% 50%;
+            position: absolute;
+            transform: rotate(30deg);
+            top: 135px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="sticky-top">
+        <ul class="nav justify-content-center bg-light py-3">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Readme</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/menu.html#functionList">小功能說明與紀錄</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/menu.html#projectsList">專案列表</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">My Resume</a>
+            </li>
+        </ul>
+    </nav>
+    <header class="container text-primary text-center pt-5">
+        <h1 class="border border-primary py-3">時鐘</h1>
+    </header>
+    <!-- <p>https://wcc723.github.io/css/2013/10/10/css-transform-origin/ transform進階使用改變起始點
+    </p>
+    <p>原理:利用new Date()這個時間物件，抓當下時間(小時，分鐘，秒)，+上算角度，例如每過60秒，秒針動了60次，分針才動1格，時針可能動0.1格， 再利用document物件內的方getElementByID來用ID抓element，再.style取得style然後改變其中的transfrom參數，再用 windows這個物間中的setInterval()這個函式來讓上述結果每5秒刷新一次</p> -->
+
+    <div class="container text-center my-5">
+        <h1 id="date"></h1>
+        <button id="clear" onclick="cleartime()" class="btn-primary  px-5 py-2 mt-2">S T O P</button></div>
+    <div class="container d-flex justify-content-center  py-5 bg-light border border-primary my-5">
+        <div class="main-clock d-flex justify-content-center align-items-center">
+            <div id="minutesPointer"></div>
+            <div id="secondsPointer"></div>
+            <div id="hoursPointer"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var Mytime = window.setInterval(function() {
+        clock()
+        clock_rotate()
+    }, 1000);
+
+    function clock() {
+        var mydate = new Date();
+        document.getElementById("date").innerHTML = mydate;
+    }
+
+    function cleartime() {
+        window.clearInterval(Mytime);
+    }
+</script>
+<!-- https://wcc723.github.io/css/2013/10/10/css-transform-origin/   transform進階使用改變起始點-->
+<!-- 原理:利用new Date()抓當下時間 -->
+<script>
+    let minutesPointer = document.querySelector('#minutesPointer');
+    let secondsPointer = document.querySelector('#secondsPointer');
+    let hoursPointer = document.querySelector('#hoursPointer');
+
+
+    function clock_rotate() {
+        var time = new Date();
+        let minutes = time.getMinutes();
+        let seconds = time.getSeconds();
+        let hours = time.getHours();
+
+        let degSeconds = (seconds * 6) - 180;
+        let degMinutes = (minutes * 6) - 180;
+        let degHours = (((hours - 12) * 30) - 180) + (minutes * 0.5);
+        // 360 / 60 6
+        minutesPointer.style.cssText = `transform: rotate(${degMinutes}deg);`
+        secondsPointer.style.cssText = `transform: rotate(${degSeconds}deg);`
+        hoursPointer.style.cssText = `transform: rotate(${degHours}deg);`
+        console.log(degMinutes);
+    }
+</script>

@@ -1,0 +1,229 @@
+  body {
+      background: linear-gradient(to bottom, rgba(247, 186, 180, 0.65) 0%, rgba(178, 119, 114, 0.21) 100%);
+  }
+  
+  header {
+      height: 380px;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1024px;
+      background: url(./img/the-urban-landscape-1698285.png);
+      background-position: 50% 3%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+  }
+  
+  h1 {
+      text-shadow: 0.1em 0.1em 0.2em black;
+      font-weight: bolder;
+      line-height: 1.2;
+      letter-spacing: 3.89px;
+      font-size: 40px;
+      color: #ffffff;
+  }
+  
+  .location {
+      font-weight: bold;
+      padding: 5px;
+      font-size: 18px;
+      width: 452px;
+      height: 48px;
+      background: url(./img/icons_down.png) no-repeat right 0px center/22px 14px, rgba(255, 255, 255, 0.7);
+      border: 3px solid #FFFFFF;
+      border-radius: 3px;
+      margin-bottom: 50px;
+  }
+  
+  .content {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1024px;
+  }
+  
+  .hotspot {
+      transform: translateY(-35px);
+      padding: 15px;
+      margin: 0 auto;
+      width: 800px;
+      background: #FFFFFF;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.20);
+      border-radius: 5px;
+  }
+  
+  .hotspot h3 {
+      font-weight: bold;
+      font-size: 18px;
+  }
+  
+  .hotspot-list {
+      margin-top: 2.5%;
+      margin-left: 4%;
+      display: flex;
+  }
+  
+  .hotspot-list input {
+      font-size: 20px;
+      color: #ffff;
+      border: transparent;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 10px 30px;
+      margin-right: 15px;
+  }
+  
+  .purple {
+      background-color: #8A82CC;
+  }
+  
+  .orange {
+      background: #FFA782;
+  }
+  
+  .yellow {
+      background: #F5D005;
+  }
+  
+  .blue {
+      background: #559AC8;
+  }
+  
+  .hr {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 900px;
+      text-align: center;
+      border-bottom: 2px dashed #559AC8;
+  }
+  
+  .hr i {
+      transform: translateY(18px);
+      font-size: 20px;
+      background-color: white;
+      color: #559AC8;
+      border-radius: 25%;
+      padding: 5px;
+  }
+  
+  .currentLocation h2 {
+      margin-top: 80px;
+      text-align: center;
+      font-size: 36px;
+      color: #8A82CC;
+  }
+  
+  .currentLocation {
+      margin-bottom: 30px;
+  }
+  
+  .card-list {
+      justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+  }
+  
+  .card {
+      background: #FFFFFF;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.20);
+      margin: 20px 10px;
+      width: 45%;
+      border-radius: 15px;
+      overflow: hidden;
+  }
+  
+  .pic {
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 150px;
+      justify-content: space-around;
+      align-items: flex-end;
+      padding-bottom: 20px;
+      transition: all 1s;
+  }
+  
+  .pic:hover {
+      transition: all 1s;
+      transform: scale(1.08);
+  }
+  
+  .pic h3 {
+      text-shadow: 0.1em 0.1em 0.2em black;
+      transform: translateX(-35px);
+      font-weight: bolder;
+      font-size: 24px;
+      color: #FFFFFF;
+  }
+  
+  .pic h4 {
+      text-shadow: 0.1em 0.1em 0.2em black;
+      font-size: 16px;
+      color: #FFFFFF;
+  }
+  
+  .card p {
+      display: flex;
+      margin-top: 15px;
+      line-height: 18px;
+      margin-left: 20px;
+      font-size: 16px;
+      align-items: center;
+  }
+  
+  .card img {
+      margin-right: 10px;
+  }
+  
+  .card-text-bottom {
+      display: flex;
+      justify-content: space-between;
+      padding-right: 40px;
+      margin-bottom: 20px;
+  }
+  
+  .page-list {
+      display: flex;
+      justify-content: center;
+  }
+  
+  .page-list button {
+      font-size: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5%;
+      text-decoration: none;
+      background-color: transparent;
+  }
+  
+  .page-list button:hover {
+      background-color: white;
+  }
+  
+  footer {
+      background-color: #559AC8;
+      justify-content: space-around;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+  }
+  
+  footer h5 {
+      color: #ffffff;
+      font-size: 30px;
+      padding: 15px 0;
+  }
+  
+  .scrollToTopBTN {
+      position: fixed;
+      top: 70%;
+      right: 20%;
+  }
+  
+  footer p,
+  a {
+      padding: 30px 0;
+      color: #F5D005;
+  }

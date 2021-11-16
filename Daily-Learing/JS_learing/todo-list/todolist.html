@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 40%;
+            margin: 0 auto;
+        }
+        
+        .input-box {
+            margin-top: 100px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .input-todo {
+            font-size: 30px;
+            padding: 10px;
+        }
+        
+        .input-todo:focus {
+            background-color: pink;
+        }
+        
+        .btn-todo {
+            font-size: 30px;
+            color: white;
+            background-color: black;
+            border: 5px solid pink;
+            cursor: pointer;
+        }
+        
+        .list {
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .list button {
+            position: absolute;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form class="input-box">
+            <input type="text" class="input-todo" placeholder="輸入代辦事項...">
+            <input type="button" class="btn-todo" value="加 入" onclick="add()">
+        </form>
+        <ol class="list"></ol>
+    </div>
+</body>
+<script>
+    let textTodo = document.querySelector('.input-todo');
+    let list = document.querySelector('.list');
+    let todolist = JSON.parse(localStorage.getItem('todolist')) || []; // 資料包
+    render();
+
+    function add() {
+        let text = textTodo.value;
+        todolist.push(text);
+        localStorage.setItem("todolist", JSON.stringify(todolist));
+        render();
+        alert('成功');
+    }
+
+    function del(num) {
+        todolist.splice(num, 1);
+        localStorage.setItem("todolist", JSON.stringify(todolist));
+        render();
+    }
+
+
+    function render() {
+        list.innerHTML = "";
+        todolist.forEach((element, num, array) => {
+            let listUL = document.createElement('li');
+            let delBtn = document.createElement('button');
+            listUL.textContent += element;
+            delBtn.textContent = 'Delete';
+            delBtn.setAttribute('onclick', 'del(' + num + ');');
+            delBtn.setAttribute('class', 'listBTN');
+            list.appendChild(listUL).appendChild(delBtn);
+        });
+    }
+</script>
+
+</html>
